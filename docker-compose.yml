@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
+      - .:/var/www/code
+  php:
+    container_name: phpcore
+    image: php:fpm
+    volumes:
+      - .:/var/www/code
