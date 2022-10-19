@@ -12,3 +12,4 @@ services:
     image: php:fpm
     volumes:
       - .:/var/www/code
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
